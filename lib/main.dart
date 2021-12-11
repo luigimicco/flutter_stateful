@@ -12,6 +12,18 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  Color _circleColor = Colors.amber;
+
+  void _swapColor() {
+    setState(() {
+      if (_circleColor == Colors.amber) {
+        _circleColor = Colors.blueGrey;
+      } else {
+        _circleColor = Colors.amber;
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -26,14 +38,14 @@ class _MyAppState extends State<MyApp> {
         body: Padding(
           padding: const EdgeInsets.all(40.0),
           child: Container(
-            decoration: const BoxDecoration(
-                shape: BoxShape.circle, color: Colors.amber),
+            decoration:
+                BoxDecoration(shape: BoxShape.circle, color: _circleColor),
           ),
         ),
-        floatingActionButton: const FloatingActionButton(
-          onPressed: null,
+        floatingActionButton: FloatingActionButton(
+          onPressed: _swapColor,
           tooltip: 'premi qui',
-          child: Icon(Icons.circle),
+          child: const Icon(Icons.circle),
         ),
       ),
     );
