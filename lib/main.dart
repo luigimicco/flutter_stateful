@@ -39,7 +39,8 @@ class _MyAppState extends State<MyApp> {
           padding: const EdgeInsets.all(40.0),
           child: Container(
             decoration:
-                BoxDecoration(shape: BoxShape.circle, color: _circleColor),
+                BoxDecoration(shape: BoxShape.circle,
+                color: _circleColor),
           ),
         ),
         floatingActionButton: FloatingActionButton(
